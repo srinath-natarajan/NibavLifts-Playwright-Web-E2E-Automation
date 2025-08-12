@@ -73,28 +73,3 @@ TypeScript – for strong typing
 Page Object Model – maintainable test structure
 
 Custom Fixtures & Helpers – reusability across tests
-
-📦 Installation
-bash
-Copy
-Edit
-# Clone the repository
-git clone https://github.com/your-username/your-repo.git
-
-# Navigate into the project
-cd your-repo
-
-# Install dependencies
-npm install
-▶ Running the Tests
-bash
-Copy
-Edit
-# Run all tests
-npx playwright test
-
-# Run this specific test
-npx playwright test nibav-summary-interactions.spec.ts
-
-# Run in headed mode for debugging
-npx playwright test nibav-summary-interactions.spec.ts --headed
