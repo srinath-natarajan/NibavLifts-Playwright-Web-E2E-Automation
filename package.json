@@ -1,0 +1,33 @@
+{
+  "name": "nl_e2e_new",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test:userAuth-india": "cross-env REGION_KEY=IN npx playwright test tests/userAuth.spec.ts",
+    "test:userAuth-usa": "cross-env REGION_KEY=US npx playwright test tests/userAuth.spec.ts",
+    "test:userAuth-ca-en": "cross-env REGION_KEY=CA_EN npx playwright test tests/userAuth.spec.ts",
+    "test:userAuth-ca-fr": "cross-env REGION_KEY=CA_FR npx playwright test tests/userAuth.spec.ts",
+    "test:productConfig-india": "cross-env REGION_KEY=IN npx playwright test tests/productsConfig.spec.ts",
+    "test:productConfig-usa": "cross-env REGION_KEY=US npx playwright test tests/productsConfig.spec.ts",
+    "test:productConfig-ca-en": "cross-env REGION_KEY=CA_EN npx playwright test tests/productsConfig.spec.ts",
+    "test:productConfig-ca-fr": "cross-env REGION_KEY=CA_FR npx playwright test tests/productsConfig.spec.ts",
+    "test:placeOrder-india": "cross-env REGION_KEY=IN npx playwright test tests/summaryOrder.spec.ts",
+    "test:placeOrder-usa": "cross-env REGION_KEY=US npx playwright test tests/summaryOrder.spec.ts",
+    "test:placeOrder-ca-en": "cross-env REGION_KEY=CA_EN npx playwright test tests/summaryOrder.spec.ts",
+    "test:placeOrder-ca-fr": "cross-env REGION_KEY=CA_FR npx playwright test tests/summaryOrder.spec.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.53.2",
+    "@types/node": "^22.13.4",
+    "cross-env": "^7.0.3",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "decimal.js": "^10.5.0",
+    "dotenv": "^16.4.7"
+  }
+}
