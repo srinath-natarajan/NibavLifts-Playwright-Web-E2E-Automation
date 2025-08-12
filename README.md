@@ -1,49 +1,129 @@
-## Playwright End-to-End Tests
+🛗 Nibav Lifts – Summary & Product Configuration E2E Test
+📌 Overview
+This Playwright test suite automates the complete order journey for Nibav Lifts, from user registration all the way to payment selection.
 
-This project, `el_e2e_cl`, automates end-to-end testing for Nibav applications using Playwright, Cucumber, and TypeScript. It offers a robust framework for developing, managing, and executing browser-based tests with efficiency.
+It verifies:
 
-### Key Features
+✅ Successful user sign-up and login
 
--   **Playwright Integration**: Utilizes Playwright for browser automation, simulating real user actions across different browsers.
--   **Cucumber for BDD**: Supports Behavior-Driven Development (BDD) with Cucumber, allowing tests to be written in natural language.
--   **TypeScript Support**: Leverages TypeScript for static type checking and the latest ECMAScript features, enhancing code quality and maintainability.
+✅ Correct product configuration flow
 
-**Note**: `Feature files are primarily used for tracking test scenarios and manual testing. Feature tags have been added to Playwright to identify which scenarios are automated.`
+✅ Order summary matches chosen selections
 
-### Prerequisites
+✅ Smooth checkout & payment flow
 
-Before setting up the project, ensure you have installed:
+🖼️ Flow Diagram
+mermaid
+Copy
+Edit
+flowchart TD
+    A[Start Test] --> B[Generate & Enter Phone Number]
+    B --> C[User Registration]
+    C --> D[User Login with OTP]
+    D --> E[Select No. of Stops]
+    E --> F[Select Lift Color, Highlight, Base Finish]
+    F --> G[Configure Door Access per Floor]
+    G --> H[Configure Hinge Positions]
+    H --> I[Select Head Unit & Carpet]
+    I --> J[Toggle Accessories (Alexa, Engraving, Cover Plates)]
+    J --> K[Select Grande & Pro Add-ons]
+    K --> L[Verify Support Brackets]
+    L --> M[Select Delivery Method]
+    M --> N[Capture Booking Amount & Breakdown]
+    N --> O[Verify Order Summary Matches Configurations]
+    O --> P[Place Order with Signature]
+    P --> Q[Handle Address & Extract Region]
+    Q --> R[Prepare Payment Parameters]
+    R --> S[Select Payment Option]
+    S --> T[End Test]
+🚀 Test Flow
+1️⃣ User Registration & Login
+Generate a random phone number
 
--   Node.js (Version 18 or above, latest stable version recommended)
+Register a new account with that number
 
-### Getting Started
+Log in using OTP verification
 
-To set up the project, follow these steps:
+2️⃣ Product Configuration
+Select No. of Stops dynamically based on product
 
-**Clone the Repository**
+Randomly choose:
 
-Clone the repository using the following command:
+Lift color
 
-      git clone https://your-username@bitbucket.org/nibavlifts/el_e2e_cl.git
+Highlight finish
 
-**Navigate to the Project Directory**
+Base finish
 
-Change to the project directory with:
+Configure:
 
-      cd el_e2e_cl
+Door access per floor
 
-**Install Dependencies**
+Hinge positions
 
-Install the required dependencies by running:
+Add-ons:
 
-      npm install
+Head unit
 
-**Run Tests**
+Carpet
 
-Execute the tests with with browser:
+Alexa integration
 
-      npx playwright test
+Custom engraving
 
-To run a specific test file, use:
+Cover plates
 
-      npx playwright test "test file name"
+Grande & Pro accessories
+
+Validate:
+
+Support bracket count matches no. of stops
+
+3️⃣ Summary & Checkout
+Choose delivery method
+
+Capture booking amount & breakdown
+
+Verify summary matches selected configurations
+
+Place order with signature
+
+Handle address & extract region data
+
+Prepare payment parameters
+
+Select and process payment option
+
+🛠️ Tech Stack
+Playwright – browser automation
+
+TypeScript – for strong typing
+
+Page Object Model – maintainable test structure
+
+Custom Fixtures & Helpers – reusability across tests
+
+📦 Installation
+bash
+Copy
+Edit
+# Clone the repository
+git clone https://github.com/your-username/your-repo.git
+
+# Navigate into the project
+cd your-repo
+
+# Install dependencies
+npm install
+▶️ Running the Test
+bash
+Copy
+Edit
+# Run all tests
+npx playwright test
+
+# Run this specific test
+npx playwright test nibav-summary-interactions.spec.ts
+
+# Run in headed mode for debugging
+npx playwright test nibav-summary-interactions.spec.ts --headed
